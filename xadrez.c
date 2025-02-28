@@ -6,7 +6,7 @@
 
 int Bispo(int opcao, int casas)
 {
-    printf("Bispo\n\n");
+    printf("-----------Bispo-----------\n\n");
     printf("Digite a direção que você quer mover o Bispo.\n");
     printf("1. Diagonal superior esquerda\n");
     printf("2. Diagonal superior direita\n");
@@ -65,7 +65,7 @@ int Torre(int opcao, int casas)
 {
     int i = 1;
 
-    printf("\n\nTorre\n\n");
+    printf("\n\n-----------Torre-----------\n\n");
     printf("Digite a direção que você quer mover a Torre.\n");
     printf("1. À frente\n");
     printf("2. Atrás\n");
@@ -131,7 +131,7 @@ int Rainha(int opcao, int casas)
 {
     int i = 1;
 
-    printf("\n\nRainha\n\n");
+    printf("\n\n**********Rainha**********\n\n");
     printf("Digite a direção que você quer mover a Rainha.\n");
     printf("1. À frente\n");
     printf("2. Atrás\n");
@@ -211,7 +211,7 @@ int Rainha(int opcao, int casas)
 
         while (i <= casas)
         {
-            printf("Diagonal Diagonal Inferior Esquerda\n");
+            printf("Diagonal Inferior Esquerda\n");
             i++;
         }
         break;
@@ -221,7 +221,7 @@ int Rainha(int opcao, int casas)
 
         while (i <= casas)
         {
-            printf("Diagonal Diagonal Inferior Direita\n");
+            printf("Diagonal Inferior Direita\n");
             i++;
         }
         break;
@@ -232,6 +232,133 @@ int Rainha(int opcao, int casas)
     }
 
     return 0;
+}
+
+int Cavalo(int opcao)
+{
+    printf("\n\n-----------Cavalo-----------\n\n");
+    printf("Digite a direção que deseja para mover o cavalo:\n");
+
+    // comando para 2 casa à direita e 1 à frente
+    printf("1. Cima-Direita\n");
+
+    // comando para 2 casa à direita e 1 para baixo
+    printf("2. Cima-Esquerda\n");
+
+    // comando para 2 casa à esquerda e 1 à frente
+    printf("3. Baixo-Direita\n");
+
+    // comando para 2 casa à direita e 1 para baixo
+    printf("4. Baixo-Esquerda\n");
+
+    // comando para 2 casa à frente e 1 para direita
+    printf("5. Direita-Cima\n");
+
+    // comando para 2 casa à frente e 1 para esquerda
+    printf("6. Direita-Baixo\n");
+
+    // comando para 2 casa para baixo e 1 para direita
+    printf("7. Esquerda-Cima\n");
+
+    // comando para 2 casa para baixo e 1 para esquerda
+    printf("8. Esquerda-Baixo\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("À Frente\n");
+            }
+            printf("Direita\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas à frente e 1 à direita\n");
+        break;
+    case 2:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("À Frente\n");
+            }
+            printf("Esquerda\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas à frente e 1 à esquerda\n");
+        break;
+    case 3:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("Para Trás\n");
+            }
+            printf("Direita\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas para trás e 1 à direita\n");
+        break;
+    case 4:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("Para Trás\n");
+            }
+            printf("Esquerda\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas para trás e 1 à esquerda\n");
+        break;
+    case 5:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("Direita\n");
+            }
+            printf("À Frente\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas à direita e 1 à frente\n");
+        break;
+    case 6:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("Direita\n");
+            }
+            printf("Para Trás\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas à direita e 1 para trás\n");
+        break;
+    case 7:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("Esquerda\n");
+            }
+            printf("À Frente\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas à esquerda e 1 à frente\n");
+        break;
+    case 8:
+        for (int i = 1; i <= 1; i++)
+        {
+            for (int j = 1; j <= 2; j++)
+            {
+                printf("Esquerda\n");
+            }
+            printf("Para Trás\n");
+        }
+        printf("o Cavalo movimentou-se 2 casas à esquerda e 1 para trás\n");
+        break;
+
+    default:
+        printf("Opção Inválida!");
+        break;
+    }
 }
 
 int main()
@@ -263,6 +390,8 @@ int main()
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
+
+    Cavalo(opcao);
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
