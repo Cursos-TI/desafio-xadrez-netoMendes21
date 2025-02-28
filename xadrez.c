@@ -281,7 +281,7 @@ int Cavalo(int opcao)
             }
             printf("Direita\n");
         }
-        printf("o Cavalo movimentou-se 2 casas à frente e 1 à direita\n");
+        printf("\no Cavalo movimentou-se 2 casas à frente e 1 à direita\n");
         break;
         break;
     case 2:
@@ -295,7 +295,7 @@ int Cavalo(int opcao)
             }
             printf("Esquerda\n");
         }
-        printf("o Cavalo movimentou-se 2 casas à frente e 1 à esquerda\n");
+        printf("\no Cavalo movimentou-se 2 casas à frente e 1 à esquerda\n");
         break;
     case 3:
         for (int i = 1; i <= 1; i++)
@@ -308,7 +308,7 @@ int Cavalo(int opcao)
             }
             printf("Direita\n");
         }
-        printf("o Cavalo movimentou-se 2 casas para trás e 1 à direita\n");
+        printf("\no Cavalo movimentou-se 2 casas para trás e 1 à direita\n");
         break;
     case 4:
         for (int i = 1; i <= 1; i++)
@@ -321,7 +321,7 @@ int Cavalo(int opcao)
             }
             printf("Esquerda\n");
         }
-        printf("o Cavalo movimentou-se 2 casas para trás e 1 à esquerda\n");
+        printf("\no Cavalo movimentou-se 2 casas para trás e 1 à esquerda\n");
         break;
     case 5:
         for (int i = 1; i <= 1; i++)
@@ -334,7 +334,7 @@ int Cavalo(int opcao)
             }
             printf("À Frente\n");
         }
-        printf("o Cavalo movimentou-se 2 casas à direita e 1 à frente\n");
+        printf("\no Cavalo movimentou-se 2 casas à direita e 1 à frente\n");
         break;
     case 6:
         for (int i = 1; i <= 1; i++)
@@ -347,7 +347,7 @@ int Cavalo(int opcao)
             }
             printf("Para Trás\n");
         }
-        printf("o Cavalo movimentou-se 2 casas à direita e 1 para trás\n");
+        printf("\no Cavalo movimentou-se 2 casas à direita e 1 para trás\n");
         break;
     case 7:
         for (int i = 1; i <= 1; i++)
@@ -360,7 +360,7 @@ int Cavalo(int opcao)
             }
             printf("À Frente\n");
         }
-        printf("o Cavalo movimentou-se 2 casas à esquerda e 1 à frente\n");
+        printf("\no Cavalo movimentou-se 2 casas à esquerda e 1 à frente\n");
         break;
     case 8:
         for (int i = 1; i <= 1; i++)
@@ -373,11 +373,11 @@ int Cavalo(int opcao)
             }
             printf("Para Trás\n");
         }
-        printf("o Cavalo movimentou-se 2 casas à esquerda e 1 para trás\n");
+        printf("\no Cavalo movimentou-se 2 casas à esquerda e 1 para trás\n");
         break;
 
     default:
-        printf("Opção Inválida!");
+        printf("Opção Inválida!\n");
         break;
     }
 }
