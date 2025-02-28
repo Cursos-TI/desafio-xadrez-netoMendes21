@@ -4,6 +4,7 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+// função de criação dos movimentos do Bispo//
 int Bispo(int opcao, int casas)
 {
     printf("-----------Bispo-----------\n\n");
@@ -61,6 +62,7 @@ int Bispo(int opcao, int casas)
     return 0;
 }
 
+// função de criação dos movimentos da Torre//
 int Torre(int opcao, int casas)
 {
     int i = 1;
@@ -127,6 +129,7 @@ int Torre(int opcao, int casas)
     return 0;
 }
 
+// função de criação dos movimentos da Rainha
 int Rainha(int opcao, int casas)
 {
     int i = 1;
@@ -234,6 +237,7 @@ int Rainha(int opcao, int casas)
     return 0;
 }
 
+// função de criação dos movimentos do Cavalo//
 int Cavalo(int opcao)
 {
     printf("\n\n-----------Cavalo-----------\n\n");
@@ -269,20 +273,25 @@ int Cavalo(int opcao)
     case 1:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("À Frente\n");
+                j++;
             }
             printf("Direita\n");
         }
         printf("o Cavalo movimentou-se 2 casas à frente e 1 à direita\n");
         break;
+        break;
     case 2:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("À Frente\n");
+                j++;
             }
             printf("Esquerda\n");
         }
@@ -291,9 +300,11 @@ int Cavalo(int opcao)
     case 3:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("Para Trás\n");
+                j++;
             }
             printf("Direita\n");
         }
@@ -302,9 +313,11 @@ int Cavalo(int opcao)
     case 4:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("Para Trás\n");
+                j++;
             }
             printf("Esquerda\n");
         }
@@ -313,9 +326,11 @@ int Cavalo(int opcao)
     case 5:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("Direita\n");
+                j++;
             }
             printf("À Frente\n");
         }
@@ -324,9 +339,11 @@ int Cavalo(int opcao)
     case 6:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("Direita\n");
+                j++;
             }
             printf("Para Trás\n");
         }
@@ -335,9 +352,11 @@ int Cavalo(int opcao)
     case 7:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("Esquerda\n");
+                j++;
             }
             printf("À Frente\n");
         }
@@ -346,9 +365,11 @@ int Cavalo(int opcao)
     case 8:
         for (int i = 1; i <= 1; i++)
         {
-            for (int j = 1; j <= 2; j++)
+            int j = 1;
+            while (j <= 2)
             {
                 printf("Esquerda\n");
+                j++;
             }
             printf("Para Trás\n");
         }
@@ -371,26 +392,27 @@ int main()
 
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-    // Chamada da função da peça Bispo
 
+    // Chamada da função da peça Bispo
     Bispo(opcao, casas);
 
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-    // Chamada da função da peça Torre
 
+    // Chamada da função da peça Torre
     Torre(opcao, casas);
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-    // Chamada da função da peça Rainha
 
+    // Chamada da função da peça Rainha
     Rainha(opcao, casas);
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
 
+    // Chamada da função da peça Cavalo
     Cavalo(opcao);
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
