@@ -5,236 +5,238 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 // função de criação dos movimentos do Bispo//
-int Bispo(int opcao, int casas)
+void Bispo(int opcao, int casas)
 {
-    printf("-----------Bispo-----------\n\n");
-    printf("Digite a direção que você quer mover o Bispo.\n");
-    printf("1. Diagonal superior esquerda\n");
-    printf("2. Diagonal superior direita\n");
-    printf("3. Diagonal inferior esquerda\n");
-    printf("4. Diagonal inferior direita\n");
-    scanf("%d", &opcao);
-
-    switch (opcao)
+    if (casas > 0)
     {
-    case 1:
-        printf("\nQuantas casas quer movimentar para à Diagonal superior esquerda?: ");
-        scanf("%d", &casas);
-
-        for (int i = 1; i <= casas; i++)
+        switch (opcao)
         {
-            printf("Diagonal superior esquerda\n");
-        }
-        break;
-    case 2:
-        printf("\nQuantas casas quer movimentar para à Diagonal superior direita?: ");
-        scanf("%d", &casas);
+        case 1:
+            for (int i = 1; i <= 1; i++)
+            {
+                for (int j = 1; j <= 1; j++)
+                {
+                    printf("Cima-");
+                }
+                printf("Direita\n");
+            }
+            Bispo(opcao, casas - 1);
+            break;
 
-        for (int i = 1; i <= casas; i++)
-        {
-            printf("Diagonal superior direita\n");
-        }
-        break;
-    case 3:
-        printf("\nQuantas casas quer movimentar para à Diagonal inferior esquerda?: ");
-        scanf("%d", &casas);
+        case 2:
+            for (int i = 1; i <= 1; i++)
+            {
+                for (int j = 1; j <= 1; j++)
+                {
+                    printf("Cima-");
+                }
+                printf("Esquerda\n");
+            }
+            Bispo(opcao, casas - 1);
+            break;
 
-        for (int i = 1; i <= casas; i++)
-        {
-            printf("Diagonal inferior esquerda\n");
-        }
-        break;
-    case 4:
-        printf("\nQuantas casas quer movimentar para à Diagonal inferior direita?: ");
-        scanf("%d", &casas);
+        case 3:
+            for (int i = 1; i <= 1; i++)
+            {
+                for (int j = 1; j <= 1; j++)
+                {
+                    printf("Baixo-");
+                }
+                printf("Direita\n");
+            }
+            Bispo(opcao, casas - 1);
+            break;
 
-        for (int i = 1; i <= casas; i++)
-        {
-            printf("Diagonal inferior direita\n");
-        }
-        break;
+        case 4:
+            for (int i = 1; i <= 1; i++)
+            {
+                for (int j = 1; j <= 1; j++)
+                {
+                    printf("Baixo-");
+                }
+                printf("Esquerda\n");
+            }
+            Bispo(opcao, casas - 1);
+            break;
 
-    default:
-        printf("Opção Inválida!\n");
-        break;
+        default:
+            printf("Opção Inválida!\n");
+            break;
+        }
     }
+}
+// Função que retorna a quantidade de casas que o usuário solicitou para o bispo se movimentar
+void QuantidadeCasasBispo(int opcao, int casas)
+{
+    scanf("%d", &casas);
+    if (casas < 1)
+    {
+        printf("Digite um valor acima de 0!!!\n");
+    }
+    else
+    {
 
-    return 0;
+        Bispo(opcao, casas);
+    }
 }
 
 // função de criação dos movimentos da Torre//
-int Torre(int opcao, int casas)
+void Torre(int opcao, int casas)
 {
-    int i = 1;
 
-    printf("\n\n-----------Torre-----------\n\n");
-    printf("Digite a direção que você quer mover a Torre.\n");
-    printf("1. À frente\n");
-    printf("2. Atrás\n");
-    printf("3. Direita\n");
-    printf("4. Esquerda\n");
-    scanf("%d", &opcao);
-
-    switch (opcao)
+    if (casas > 0)
     {
-    case 1:
-        printf("\nQuantas casas quer movimentar para À frente?: ");
-        scanf("%d", &casas);
-
-        do
+        switch (opcao)
         {
+        case 1:
             printf("À Frente\n");
-            i++;
-        } while (i <= casas);
-        break;
+            Torre(opcao, casas - 1);
+            break;
 
-    case 2:
-        printf("\nQuantas casas quer movimentar para Trás?: ");
-        scanf("%d", &casas);
-
-        do
-        {
+        case 2:
             printf("Atrás\n");
-            i++;
-        } while (i <= casas);
-        break;
+            Torre(opcao, casas - 1);
+            break;
 
-    case 3:
-        printf("\nQuantas casas quer movimentar para Direita?: ");
-        scanf("%d", &casas);
-
-        do
-        {
+        case 3:
             printf("Direita\n");
-            i++;
-        } while (i <= casas);
-        break;
+            Torre(opcao, casas - 1);
+            break;
 
-    case 4:
-        printf("\nQuantas casas quer movimentar para Esquerda?: ");
-        scanf("%d", &casas);
+        case 4:
+            printf("Esquerda\n");
+            Torre(opcao, casas - 1);
+            break;
 
-        do
-        {
-            printf("esquerda\n");
-            i++;
-        } while (i <= casas);
-        break;
-
-    default:
-        printf("Opção Inválida!\n");
-        break;
+        default:
+            printf("Opção inválida");
+            break;
+        }
     }
+}
 
-    return 0;
+// Função que retorna a quantidade de casas que o usuário solicitou para a torre se movimentar
+void quantidadeCasasTorre(int casas, int opcao)
+{
+    scanf("%d", &casas);
+    if (casas < 0 || casas > 8)
+    {
+        printf("Digite um valor acima de 0!!!\n");
+    }
+    else
+    {
+        Torre(opcao, casas);
+    }
 }
 
 // função de criação dos movimentos da Rainha
-int Rainha(int opcao, int casas)
+void Rainha(int opcao, int casas)
 {
-    int i = 1;
+    int i, j;
 
-    printf("\n\n**********Rainha**********\n\n");
-    printf("Digite a direção que você quer mover a Rainha.\n");
-    printf("1. À frente\n");
-    printf("2. Atrás\n");
-    printf("3. Direita\n");
-    printf("4. Esquerda\n");
-    printf("5. Diagonal superior esquerda\n");
-    printf("6. Diagonal superior direita\n");
-    printf("7. Diagonal inferior esquerda\n");
-    printf("8. Diagonal inferior direita\n");
-    scanf("%d", &opcao);
-
-    switch (opcao)
+    if (casas > 0)
     {
-    case 1:
-        printf("\nQuantas casas quer movimentar para À frente?: ");
-        scanf("%d", &casas);
-
-        while (i <= casas)
+        switch (opcao)
         {
-            printf("À Frente\n");
-            i++;
-        }
-        break;
-    case 2:
-        printf("\nQuantas casas quer movimentar para Trás?: ");
-        scanf("%d", &casas);
+        case 1:
+            printf("À frente\n");
+            Rainha(opcao, casas - 1);
+            break;
 
-        while (i <= casas)
-        {
+        case 2:
             printf("Atrás\n");
-            i++;
-        }
-        break;
-    case 3:
-        printf("\nQuantas casas quer movimentar para Direita?: ");
-        scanf("%d", &casas);
+            Rainha(opcao, casas - 1);
+            break;
 
-        while (i <= casas)
-        {
+        case 3:
             printf("Direita\n");
-            i++;
-        }
-        break;
-    case 4:
-        printf("\nQuantas casas quer movimentar para Esquerda?: ");
-        scanf("%d", &casas);
+            Rainha(opcao, casas - 1);
+            break;
 
-        while (i <= casas)
-        {
+        case 4:
             printf("Esquerda\n");
-            i++;
-        }
-        break;
-    case 5:
-        printf("\nQuantas casas quer movimentar para à Diagonal superior esquerda?: ");
-        scanf("%d", &casas);
+            Rainha(opcao, casas - 1);
+            break;
 
-        while (i <= casas)
-        {
-            printf("Diagonal Superior Esquerda\n");
-            i++;
-        }
-        break;
-    case 6:
-        printf("\nQuantas casas quer movimentar para à Diagonal superior direita?: ");
-        scanf("%d", &casas);
+        case 5:
+            for (int i = 1; i <= 1; i++)
+            {
+                j = 1;
+                while (j <= 1)
+                {
+                    printf("Cima-");
+                    j++;
+                }
+                printf("Direita\n");
+                i++;
+            }
+            Rainha(opcao, casas - 1);
+            break;
 
-        while (i <= casas)
-        {
-            printf("Diagonal Superior Direita\n");
-            i++;
-        }
-        break;
-    case 7:
-        printf("\nQuantas casas quer movimentar para à Diagonal inferior esquerda?: ");
-        scanf("%d", &casas);
+        case 6:
+            for (int i = 1; i <= 1; i++)
+            {
+                j = 1;
+                while (j <= 1)
+                {
+                    printf("Cima-");
+                    j++;
+                }
+                printf("Esquerda\n");
+                i++;
+            }
+            Rainha(opcao, casas - 1);
+            break;
 
-        while (i <= casas)
-        {
-            printf("Diagonal Inferior Esquerda\n");
-            i++;
-        }
-        break;
-    case 8:
-        printf("\nQuantas casas quer movimentar para à Diagonal inferior direita?: ");
-        scanf("%d", &casas);
+        case 7:
+            for (int i = 1; i <= 1; i++)
+            {
+                j = 1;
+                while (j <= 1)
+                {
+                    printf("Baixo-");
+                    j++;
+                }
+                printf("Direita\n");
+                i++;
+            }
+            Rainha(opcao, casas - 1);
+            break;
 
-        while (i <= casas)
-        {
-            printf("Diagonal Inferior Direita\n");
-            i++;
-        }
-        break;
+        case 8:
+            for (int i = 1; i <= 1; i++)
+            {
+                j = 1;
+                while (j <= 1)
+                {
+                    printf("Baixo-");
+                    j++;
+                }
+                printf("Esquerda\n");
+                i++;
+            }
+            Rainha(opcao, casas - 1);
+            break;
 
-    default:
-        printf("Opção Inválida!\n");
-        break;
+        default:
+            printf("Opção Inválida!\n");
+            break;
+        }
     }
+}
 
-    return 0;
+// Função que retorna a quantidade de casas que o usuário solicitou para a Rainha se movimentar
+void QuantidadeCasasRainha(int opcao, int *casas)
+{
+    scanf("%d", casas);
+    if (*casas < 0 || *casas > 8)
+    {
+        printf("Digite um valor acima de 0 ou maior que 8!!!\n");
+    }
+    else
+    {
+        Rainha(opcao, *casas);
+    }
 }
 
 // função de criação dos movimentos do Cavalo//
@@ -394,25 +396,157 @@ int main()
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
 
     // Chamada da função da peça Bispo
-    Bispo(opcao, casas);
+    //------------------------------------------------------BISPO------------------------------------------------------
+    printf("-----------Bispo-----------\n\n");
+    printf("Digite a direção que você quer mover o Bispo.\n");
+    printf("1. Diagonal Superior Direita\n");
+    printf("2. Diagonal Superior Esquerda\n");
+    printf("3. Diagonal Inferior Direita\n");
+    printf("4. Diagonal Inferior Esquerda\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        printf("\nQuantas casas quer movimentar para à Diagonal Superior Direita?: ");
+        // não é preciso chamar a função "Bispo", a função "quantidadeCasasBispo" já está trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasBispo(opcao, casas);
+        break;
+
+    case 2:
+        printf("\nQuantas casas quer movimentar para à Diagonal Superior Esquerda?: ");
+        // não é preciso chamar a função "Bispo", a função "quantidadeCasasBispo" já está trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasBispo(opcao, casas);
+        break;
+
+    case 3:
+        printf("\nQuantas casas quer movimentar para à Diagonal Inferior Direita?: ");
+        // não é preciso chamar a função "Bispo", a função "quantidadeCasasBispo" já está trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasBispo(opcao, casas);
+        break;
+
+    case 4:
+        printf("\nQuantas casas quer movimentar para à Diagonal Inferior Esquerda?: ");
+        // não é preciso chamar a função "Bispo", a função "quantidadeCasasBispo" já está trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasBispo(opcao, casas);
+        break;
+
+    default:
+        printf("Opção Inválida!!!\n");
+        break;
+    }
 
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
 
     // Chamada da função da peça Torre
-    Torre(opcao, casas);
+    //------------------------------------------------------TORRE------------------------------------------------------
+    printf("\n\n-----------Torre-----------\n\n");
+    printf("Digite a direção que você quer mover a Torre.\n");
+    printf("1. À frente\n");
+    printf("2. Atrás\n");
+    printf("3. Direita\n");
+    printf("4. Esquerda\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        printf("Quantas casas quer movimentar para À frente?: ");
+        // não é preciso chamar a função "Torre", a função "quantidadeCasasTorre" já está trazendo o retorno pedido pelo desafio//
+        quantidadeCasasTorre(casas, opcao);
+        break;
+    case 2:
+        printf("Quantas casas quer movimentar para Trás?: ");
+        // não é preciso chamar a função "Torre", a função "quantidadeCasasTorre" já está trazendo o retorno pedido pelo desafio//
+        quantidadeCasasTorre(casas, opcao);
+        break;
+    case 3:
+        printf("Quantas casas quer movimentar para Direita?: ");
+        // não é preciso chamar a função "Torre", a função "quantidadeCasasTorre" já está trazendo o retorno pedido pelo desafio//
+        quantidadeCasasTorre(casas, opcao);
+        break;
+    case 4:
+        printf("Quantas casas quer movimentar para Esquerda?: ");
+        // não é preciso chamar a função "Torre", a função "quantidadeCasasTorre" já está trazendo o retorno pedido pelo desafio//
+        quantidadeCasasTorre(casas, opcao);
+        break;
+    default:
+        printf("Opção Inválida!!!!\n");
+        break;
+    }
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
     // Chamada da função da peça Rainha
-    Rainha(opcao, casas);
+    //------------------------------------------------------RAINHA------------------------------------------------------
+    printf("\n\n**********Rainha**********\n\n");
+    printf("Digite a direção que você quer mover a Rainha.\n");
+    printf("1. À frente\n");
+    printf("2. Atrás\n");
+    printf("3. Direita\n");
+    printf("4. Esquerda\n");
+    printf("5. Diagonal Superior Direita\n");
+    printf("6. Diagonal Superior Esquerda\n");
+    printf("7. Diagonal Inferior Direita\n");
+    printf("8. Diagonal Inferior Esquerda\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        printf("\nQuantas casas quer movimentar para À frente?: ");
+        // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+    case 2:
+        printf("\nQuantas casas quer movimentar para Trás?: ");
+        // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+    case 3:
+        printf("\nQuantas casas quer movimentar para Direita?: ");
+         // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+    case 4:
+        printf("\nQuantas casas quer movimentar para Esquerda?: ");
+         // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+    case 5:
+        printf("\nQuantas casas quer movimentar para à Diagonal Superior Direita?: ");
+         // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+    case 6:
+        printf("\nQuantas casas quer movimentar para à Diagonal Superior Esquerda?: ");
+         // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+    case 7:
+        printf("\nQuantas casas quer movimentar para à Diagonal Inferior Direita?: ");
+         // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+    case 8:
+        printf("\nQuantas casas quer movimentar para à Diagonal Inferior Esquerda?: ");
+         // não é preciso chamar a função "Rainha",ela está sendo chamada implícitamente pela função "quantidadeCasasTorre" trazendo o retorno pedido pelo desafio//
+        QuantidadeCasasRainha(opcao, &casas);
+        break;
+
+    default:
+        printf("Opção Inválida!\n");
+        break;
+    }
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
 
     // Chamada da função da peça Cavalo
+    //------------------------------------------------------CAVALO------------------------------------------------------
     Cavalo(opcao);
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
